@@ -1,6 +1,6 @@
 
 -- User Table
-CREATE TABLE user (
+CREATE TABLE users (
     user_id UUID PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE review (
     property_id UUID REFERENCES property(property_id),
     user_id UUID REFERENCES user(user_id),
     rating INTEGER CHECK (rating >= 1 AND rating <= 5) NOT NULL,
-    comment TEXT NOT NULL,
+    comment_text  TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     UNIQUE (user_id, property_id)
 );
