@@ -15,7 +15,8 @@ SELECT
     property.name AS Property
 FROM property
 LEFT JOIN review
-ON review.id = property.id;
+ON review.id = property.id
+ORDER BY property.name ASC;
 
 --full outer join
 SELECT 

@@ -25,4 +25,6 @@ SELECT
 FROM booking 
 JOIN users  ON booking.user_id = users.id
 JOIN property  ON booking.property_id = property.id
-JOIN payments pay ON booking.id = pay.booking_id;
+JOIN payments pay ON booking.id = pay.booking_id
+WHERE booking.start_date >= '2025-01-01'
+AND payment.payment_date >= '2025-01-01';
